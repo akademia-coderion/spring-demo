@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Upraszczanie ułamków</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+
+<h1>Upraszczanie ułamków</h1>
+
+<div class="ulamek">
+    <div th:text="${licznik}"></div>
+    <div class="licznik"></div>
+    <div th:text="${mianownik}"></div>
+</div>
+<div class="znakRownosci">=</div>
+<div class="ulamek">
+    <div th:text="${licznikUproszczony}"></div>
+    <div class="licznik"></div>
+    <div th:text="${mianownikUproszczony}"></div>
+</div>
+
+</body>
+</html>

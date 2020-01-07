@@ -1,0 +1,22 @@
+.ulamek {
+  float: left;
+  text-align: center;
+  width: 100px;
+}
+
+.ulamek div {
+	color: #0000ff;
+	font-size: 72px;
+}
+
+.ulamek .licznik {
+    border-style: solid;
+    border-color: #000;
+    border-width: 0 0 1px 0;
+}
+
+.znakRownosci {
+    float: left;
+    margin: 40px 20px 0 20px;
+    font-size: 72px;
+}
