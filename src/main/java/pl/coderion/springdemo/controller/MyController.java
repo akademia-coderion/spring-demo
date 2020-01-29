@@ -1,8 +1,6 @@
 package pl.coderion.springdemo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.coderion.Euklides;
 import pl.coderion.Ulamek;
 
@@ -24,6 +22,11 @@ public class MyController {
 
         Ulamek ulamek = new Ulamek(licznik, mianownik);
         System.out.println(String.format("[%s] %s %s", new Date(), request.getRemoteAddr(), ulamek));
+        return Euklides.uprosc(ulamek).toString();
+    }
+
+    @PostMapping("/uprosc")
+    public String uproscUlamekJson(@RequestBody Ulamek ulamek) {
         return Euklides.uprosc(ulamek).toString();
     }
 }
