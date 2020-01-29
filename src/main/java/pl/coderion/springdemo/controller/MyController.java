@@ -26,7 +26,7 @@ public class MyController {
     }
 
     @PostMapping("/uprosc")
-    public String uproscUlamekJson(@RequestBody Ulamek ulamek) {
-        return Euklides.uprosc(ulamek).toString();
+    public Ulamek uproscUlamekJson(@RequestBody Ulamek ulamek) {
+        return Euklides.uprosc(ulamek);
     }
 }
