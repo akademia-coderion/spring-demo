@@ -3,6 +3,7 @@ package pl.coderion.springdemo.controller;
 import org.springframework.web.bind.annotation.*;
 import pl.coderion.Euklides;
 import pl.coderion.Ulamek;
+import pl.coderion.springdemo.model.Add5Numbers;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -28,5 +29,11 @@ public class MyController {
     @PostMapping("/uprosc")
     public Ulamek uproscUlamekJson(@RequestBody Ulamek ulamek) {
         return Euklides.uprosc(ulamek);
+    }
+
+    @PostMapping("/dodaj")
+    public Integer dodaj5Liczb(@RequestBody Add5Numbers x) {
+        Integer suma = x.getA1() + x.getA2() + x.getA3() + x.getA4() + x.getA5();
+        return suma;
     }
 }
