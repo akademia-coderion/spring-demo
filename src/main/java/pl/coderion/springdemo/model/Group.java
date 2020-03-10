@@ -6,19 +6,14 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "tbl_student")
-public class Student {
+@Table(name = "tbl_group")
+public class Group {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    private Group group;
+    private String symbol;
 
-    private String firstName;
-
-    private String lastName;
-
-    private String email;
+    private String name;
 }

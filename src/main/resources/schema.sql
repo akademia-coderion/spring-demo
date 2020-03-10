@@ -1,8 +1,16 @@
-DROP TABLE IF EXISTS tbl_student;
+DROP TABLE IF EXISTS tbl_group;
+CREATE TABLE tbl_group (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  symbol VARCHAR(250) NOT NULL,
+  name VARCHAR(250) NOT NULL
+);
 
+DROP TABLE IF EXISTS tbl_student;
 CREATE TABLE tbl_student (
   id INT AUTO_INCREMENT PRIMARY KEY,
+  group_id INT NOT NULL,
   first_name VARCHAR(250) NOT NULL,
   last_name VARCHAR(250) NOT NULL,
   email VARCHAR(250) DEFAULT NULL
 );
+ALTER TABLE tbl_student ADD CONSTRAINT fk_student_group FOREIGN KEY (group_id) REFERENCES tbl_group(id);
