@@ -14,22 +14,22 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping("/students")
-    private List<Student> getAllPersons() {
+    private List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
     @GetMapping("/students/{id}")
-    private Student getPerson(@PathVariable("id") int id) {
+    private Student getStudent(@PathVariable("id") int id) {
         return studentService.getStudentById(id);
     }
 
     @DeleteMapping("/students/{id}")
-    private void deletePerson(@PathVariable("id") int id) {
+    private void deleteStudent(@PathVariable("id") int id) {
         studentService.delete(id);
     }
 
     @PostMapping("/students")
-    private int savePerson(@RequestBody Student student) {
+    private int saveStudent(@RequestBody Student student) {
         studentService.saveOrUpdate(student);
         return student.getId();
     }
